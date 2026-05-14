@@ -8,7 +8,8 @@ build/
 *.log
 *.nav
 *.out
-*.pdf
+/build/
+/main.pdf
 *.run.xml
 *.snm
 *.synctex.gz

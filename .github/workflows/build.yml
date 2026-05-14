@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile Beamer PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: .
+          latexmk_use_xelatex: true
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: xdu-beamer-template-pdf
+          path: build/main.pdf
