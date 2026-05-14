@@ -1,4 +1,5 @@
 build/
+dist/
 *.aux
 *.bbl
 *.bcf
